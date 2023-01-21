@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='carding.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,200&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6facfe37e.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+        <div class="bgimg">
+            <div class="container">
+                <div class="panel">
+                    <form id="locationinput" method="POST">
+                        <input type="search " class="search" placeholder="search location" name="city"/>
+                        <button type="submit" class="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="snow-wrap">
+                <div class="snow">
+                    
+                </div>
+                <div class="container1">
+                    <div class="card">
+                        <div class="imgBx">
+                            <img src="https://easydrawingguides.com/wp-content/uploads/2020/12/Sun-and-Moon-Step-10.png">
+                        </div>
+                        <div class="content">
+                        <div class="details">
+        
+                            <p class="p1">Date:<span>{{day1.date}}<span></p>
+                            <div class="data">
+                                <p class="p1">Sunset:<span>{{day1.astronomy[0].sunset}}<span></p>
+                                <p class="p1">Temperature:<span>{{day1.avgtemp_c}}<span></p>
+                                <p class="p1">Humidity:<span>{{day1.hourly[0].humidity}}<span></p>
+                                <p class="p1">Pressure:<span>{{day1.hourly[0].pressure}}<span></p>
+                                <p class="p1">Description:<span>{{day1.hourly[0].weather_desc[0].value}}<span></p>
+                            </div>
+                                
+                        </div>
+                    </div>
+        
+                        
+                    </div>
+                    
+                    <div class="card">
+                    <div class="imgBx">
+                        <img src="https://thumbs.dreamstime.com/b/sun-clouds-sketch-vector-illustration-sun-clouds-sky-sketch-engraving-vector-illustration-t-shirt-apparel-print-design-192526972.jpg">
+                    </div>
+                        <div class="content">
+                        <div class="details">
+        
+                            <p class="p1">Date:<span>{{day2.date}}<span></p>
+                            <div class="data">
+                                <p class="p1">Sunset:<span>{{day2.astronomy[0].sunset}}<span></p>
+                                <p class="p1">Temperature:<span>{{day2.avgtemp_c}}<span></p>
+                                <p class="p1">Humidity:<span>{{day2.hourly[0].humidity}}<span></p>
+                                <p class="p1">Pressure:<span>{{day2.hourly[0].pressure}}<span></p>
+                                <p class="p1">Description:<span>{{day2.hourly[0].weather_desc[0].value}}<span></p>
+                            </div>
+                                
+                        </div>
+                    </div>
+                    </div>	
+                    <div class="card">
+                    <div class="imgBx">
+                        <img src="https://www.pngitem.com/pimgs/m/13-136571_illusion-clipart-kid-drawing-cartoon-sun-and-clouds.png">
+                    </div>
+                    <div class="content">
+                        <div class="details">
+        
+                            <p class="p1">Date:<span>{{day3.date}}<span></p>
+                            <div class="data">
+                                <p class="p1">Sunset:<span>{{day3.astronomy[0].sunset}}<span></p>
+                                <p class="p1">Temperature:<span>{{day3.avgtemp_c}}<span></p>
+                                <p class="p1">Humidity:<span>{{day3.hourly[0].humidity}}<span></p>
+                                <p class="p1">Pressure:<span>{{day3.hourly[0].pressure}}<span></p>
+                                <p class="p1">Description:<span>{{day3.hourly[0].weather_desc[0].value}}<span></p>
+                            </div>
+                                
+                        </div>
+                    </div>
+                    
+                    
+                
+                    
+            </div>
+            </div>
+        </div>
+        
+
+	
+<body>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
+                          
+
+    
+    
+    
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

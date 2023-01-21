@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,900;1,200&family=Roboto:wght@900&display=swap');
+
+
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+body{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background-color:#b6bfbe;/#bddbd6;/ #ccccff;*/
+    overflow-y: hidden;
+    animation: sky 5.5s 2s forwards;
+}
+img{
+    position:absolute;
+    bottom:0;
+    width:100%;
+
+}
+.sun{
+    position: absolute;
+    left:70%;
+    width:100px;
+    height:100px;
+    background-color: #fcfc3a;
+    border-radius:50%;
+    box-shadow: 0 0 20px 10px #fcfc3a;
+    animation:sun 15s forwards;
+
+}
+@keyframes sun {
+    100%{
+        transform:translateY(750px);
+        }
+}
+@keyframes sky{
+    50%{
+        background-color: #ffd700;
+        }
+        65%{
+            background-color: #ffb90f;
+        }
+        85%{
+            background-color: #f79f2d;
+        }
+        100%{
+            background-color: #68228b;
+                }
+}
+.moon{
+    position:absolute;
+    top:5%;
+    right:10%;
+    width:100px;
+    height:100px;
+    background-color: transparent;
+    box-shadow:20px 10px #fff;
+    border-radius: 50%;
+    opacity:0;
+    animation:moon 0.8s 7s forwards;
+
+
+}
+@keyframes moon{
+    100%{
+        opacity:1;
+
+    }
+}
+.cloud{
+    position: absolute;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+
+}
+.cloud1{
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:600px;
+    z-index:10;
+    animation:animateCloud 50s linear infinite;
+
+}
+.cloud2{
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:500px;
+    z-index:10;
+    animation:animateCloud 35s linear infinite;
+
+}
+.cloud3{
+    position:absolute;
+    top:0;
+    left:0;
+    max-width:600px;
+    z-index:10;
+    animation:animateCloud 80s linear infinite;
+
+}
+.cloud4{
+    position:absolute;
+    top:200px;
+    left:0;
+    max-width:300px;
+    z-index:10;
+    animation:animateCloud 70s linear infinite;
+
+}
+.cloud5{
+    position:absolute;
+    top:150px;
+    left:0;
+    max-width:500px;
+    z-index:10;
+    animation:animateCloud 40s linear infinite;
+
+}
+.cloud6{
+    position:absolute;
+    top:75px;
+    left:0;
+    max-width:400px;
+    z-index:10;
+    animation:animateCloud 30s linear infinite;
+
+}
+@keyframes animateCloud{
+    0%{
+        transform:translateX(-100%) scale(1);
+
+    }
+    100%{
+        transform:translateX(400%) scale(1.2);
+
+    }
+    
+}
+h2{
+    position:absolute;
+    margin:0;
+    font-size:4em;
+    font-weight:900;
+    color:#fff;
+    z-index:1;
+    overflow:hidden;
+    justify-content:center;
+    display:flex;
+    align-items:center;
+    min-height:100vh;
+    margin-left:400px;
+
+
+}
+
+h2:before
+{
+   
+    position:absolute;
+    left:120%;
+    width:120%;
+    height:100%;
+    background:linear-gradient(90deg,transparent 0%,#000 5%,#000 100%);
+    animation:animate 5.5s linear forwards;
+
+}
+@keyframes animate{
+    0%{
+        left:110%
+
+    }
+    100%{
+        left:-20%  
+    }
+}
+h2 span{
+    color:#2c082e;
+
+}
+.imp{
+    border-radius: 20%;
+    text-align: center;
+    padding:10px 20px;
+    
+    margin-left:40px;
+    top:25%;
+    align-items: center;
+    border:none;
+    outline:none;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    border-radius: 6px;
+    position:relative;
+    padding: 10px 20px;
+    background: #b6bfbe;
+    font-size:18px;
+    font-weight: 400;
+    box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:transform 0.2s ease;
+    border:none;
+
+}

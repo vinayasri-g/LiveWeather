@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previous data</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='previous.css')}}">
+</head>
+<body>
+    <form class="form-inline" name="ids" method="POST">
+        <select class="form-control" id="select1" name="option">
+            <option value="Vijayawada"></option>
+            <option value="Guntur"></option>
+            <option value="Nellore"></option>
+            <option value="Eluru"></option>
+            <option value="Srikakulam"></option>
+            <option value="Rajamahendravaram"></option>
+            <option value="Eluru"></option>
+            <option value="Srikakulam"></option>
+            <option value="vijayanagaram"></option>
+            <option value="Karimnagar"></option>
+            <option value="Anantapur"></option>
+            <option value="Nellore"></option>
+            <option value="Hyderabad"></option>
+            <option value="Machilipatnam"></option>
+            <option value="Chittor"></option>
+            <option value="Kadapa"></option>
+            <option value="Tirupati"></option>
+
+
+        </select>
+        <div class="table text-center mt-4 ml-4">
+            <table border="1px" cellpadding="20px" cellspacing="0px">
+                <tr>
+                        <th>Day</th>
+                        <th>Temperature</th>
+                        <th>Pressure</th>
+                        <th>Humidity</th>
+                    
+                </tr>
+                {% for i in place %}
+                <tr>
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                {% endfor %}
+            </table>
+        </div>
+        
+    </form>
+</body>
+</html>

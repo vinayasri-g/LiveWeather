@@ -1,0 +1,141 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='animation.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Poppins:ital,wght@0,900;1,200&family=Roboto:wght@900&display=swap" rel="stylesheet">
+   
+</head>
+<body class="{{url_for('homereturn')}}}">
+    <div class="sun"></div>
+    <img src="static/images/bg-building.png"/>
+    <h2><span class="first-text"></span></h2>
+    <div class="imp"><button class="button"><a href="http://127.0.0.1:5000/second">GET STARTED</button></a></div>
+    <div class="moon"></div>
+    <div class="cloud">
+        <img src="static/images/cloud1.png" class="cloud1" alt=""/>
+        <img src="static/images/cloud2.png" class="cloud2" alt=""/>
+        <img src="static/images/cloud3.png" class="cloud3" alt=""/>
+        <img src="static/images/cloud1.png" class="cloud4" alt=""/>
+        <img src="static/images/cloud2.png" class="cloud5" alt=""/>
+        <img src="static/images/cloud3.png" class="cloud6" alt=""/>
+
+    </div>
+    
+    <script>
+        const text=document.querySelector(".first-text");
+        const textLoad=()=>{
+            setTimeout(()=>{
+                text.innerHTML="WEATHER FORECAST";
+                
+                
+            },0);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORECAS";
+            },100);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORECA";
+            },200);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FOREC";
+            },300);
+            setTimeout(()=>{
+               text.innerHTML="WEATEHR FORE";
+            },400);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FOR";
+            },500);
+            setTimeout(()=>{
+                text.innerHTML="WEATHER FO";
+            },600);
+        
+            setTimeout(()=>{
+               text.innerHTML="WEATHER F";
+            },700);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER ";
+            },800);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER";
+            },900);
+            setTimeout(()=>{
+               text.innerHTML="WEATHE";
+            },1000);
+            setTimeout(()=>{
+               text.innerHTML="WEATH";
+            },1100);
+            setTimeout(()=>{
+               text.innerHTML="WEAT";
+            },1200);
+            setTimeout(()=>{
+               text.innerHTML="WEA";
+            },1300);
+            setTimeout(()=>{
+               text.innerHTML="WE";
+            },1400);
+            setTimeout(()=>{
+               text.innerHTML="W";
+            },1500);
+            setTimeout(()=>{
+               text.innerHTML="";
+            },1600);
+            setTimeout(()=>{
+               text.innerHTML="W";
+            },1700);
+            setTimeout(()=>{
+
+            },1800);
+             setTimeout(()=>{
+               text.innerHTML="WEA";
+            },1900);
+             setTimeout(()=>{
+               text.innerHTML="WEAT";
+            },2000); 
+            setTimeout(()=>{
+               text.innerHTML="WEATH";
+            },2100); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHE";
+            },2200); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER";
+            },2300);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER ";
+            },2400); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER F";
+            },2500); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FO";
+            },2600); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FOR";
+            },2700); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORE";
+            },2800); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FOREC";
+            },2900); 
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORECA";
+            },3000);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORECAS";
+            },3100);
+            setTimeout(()=>{
+               text.innerHTML="WEATHER FORECAST";
+            },3200);
+          
+        }
+         textLoad();
+         setInterval(textLoad,5000);
+       </script>
+</body>
+</html>

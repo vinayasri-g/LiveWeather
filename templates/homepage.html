@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task starts</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Andika:wght@700&family=Poppins:ital,wght@0,900;1,200&family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b6facfe37e.js" crossorigin="anonymous"></script>
+    
+    <style>
+        body{
+			
+			background-size: cover;
+			height: 100vh;
+		}
+		.broken-clouds{
+            /*like this you need to add the respected image url with !important at the end of the property*/
+			background-image: url('https://images.unsplash.com/photo-1519944613702-4f4ad2c7f9e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') !important;
+		}
+        .smoke{
+            background-image: url('https://images.unsplash.com/photo-1673368777914-a3bdac42c5e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80')!important;
+        }
+        .haze{
+            background-image: url('https://images.unsplash.com/photo-1616071906060-1f425a639465?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1166&q=80')!important;
+        }
+        .scattered-clouds{
+            background-image: url('https://images.unsplash.com/photo-1483354483454-4cd359948304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')!important;
+        }
+        .clear-sky{
+            background-image: url('https://images.unsplash.com/photo-1483354483454-4cd359948304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')!important;
+        }
+        .few-clouds{
+            background-image:url('')!important;
+        }
+        .mist{
+            background-image: url('https://images.unsplash.com/photo-1673725437337-d8582e739c24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80') !important;
+        }
+    </style>
+</head>
+<body class={{weather.cssClassName}}>
+    
+    {% if weather=="city not found" %}
+    <form>
+        <div class="modal-box">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <h2>Incorrect City</h2>
+            <h3>Please check the entered city It doesnt exists</h3>
+            <div class="buttons">
+                
+                <a href="http://127.0.0.1:5000/"><button class="close-btn" >Ok,close</button></a>
+            </div>
+    </form>
+    {% else %} 
+        <div class="weather-app">
+            <div class="container">
+                
+                <h3 class="brand">The Weather</h3>
+                    <div>
+                            
+                        <h1 class="temp">{{weather.temperature}} &#176;</h1>
+                            <div class="city-time">
+                                <h1 class="name">{{weather.city}}</h1>
+                                <small>
+                                    <span id="time" class="time"></span>
+                                    <span class="date">{{weather.date}}</span>
+                                </small>
+                            </div>
+                            <div class="weather">
+                                <img src="http://openweathermap.org/img/wn/{{ weather.icon }}.png"/>
+                                <span class="condition">{{ weather.description}}</span>
+                            </div>
+                        </div>    
+                    </div>
+                
+                <div class="panel">
+                    <form id="locationinput" method="POST">
+                        <input type="search" id="search" placeholder="search location" name="city" />
+                        <button   class="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
+                        
+                    </form>
+                    
+                    <ul class="details">
+                        <h4>Weather Details</h4>
+                        
+                        <li>
+                            <span>Humidity</span>
+                            <span class="humidity">{{ weather.humidity }}</span>
+            
+                        </li>
+                        <li>
+                            <span>Wind</span>
+                            <span class="wind">{{ weather.wind }}</span>
+            
+                        </li>
+                        <li>
+                            <span>Pressure</span>
+                            <span class="temperature">{{ weather.pressure }}</span>
+            
+                        </li>
+            
+                    </ul>
+                    
+                   <ul>
+                        <a href="{{ url_for('index') }}"><button class="design">Forecast Weather</button></a>
+                        <!-- Default dropright button -->
+                        
+                        <!-- Split dropright button -->
+                        <div class="btn-group dropright">
+                            
+                           <button  type="button" class="btn btn-secondary">
+                            Previous Forecast
+                            </button>
+                            
+                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropright</span>
+                            </button>
+                            
+                            <div class="dropdown-menu pre-scrollable" aria-labelledby="dropdownMenuButton">
+                            
+                            {% block content %}
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='vijayawada')}}">Vijayawada </a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='guntur')}}">guntur</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='vijayanagaram')}}">vijayanagaram</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Srikakulam')}}">Srikakulam</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Hyderabad')}}">Hyderabad</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Karimnagar')}}">Karimnagar</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Nellore')}}">Nellore</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Anantapur')}}">Anantapur</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Eluru')}}">Eluru</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Rajamahendravaram')}}">Rajamahendravaram</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Machilipatnam')}}">Machilipatnam</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Chittor')}}">Chittor</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Kadapa')}}">Kadapa</a>
+                            <a  class="dropdown-item" href="{{url_for('prefore',place='Tirupati')}}">Tirupati</a>
+                            
+                            {% endblock %}
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+
+            </div>
+    
+    
+        <script type="text/javascript">
+            var time= new Date().toLocaleString('en-US',{hour:"numeric",minute:"numeric",hour12:true});
+            document.getElementById("time").innerHTML=time
+            function bgImage(climate){
+                console.log(climate)
+			}
+                    
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    
+{% endif %}
+</body>
+</html>
